@@ -7,7 +7,7 @@ A simple nodejs server
 4. Run: `npm start`
 # How to run tests:
 1. Start/restart server with `npm start` command.<br>
-**Note**: it's important to restart server every time before running test command, because one of the tests is cheking if all user records are empty.
+**Note**: it's important to restart server every time before running test command, because one of the tests is checking if all user records are empty.
 2. Run `npm test`.
 # Available endpoints:
 ## 1. GET `/api/users`
