@@ -26,5 +26,8 @@
         "endOfLine": "auto"
       }
     ]
-  }
+  },
+  "ignorePatterns": [
+    "dist"
+  ]
 }
