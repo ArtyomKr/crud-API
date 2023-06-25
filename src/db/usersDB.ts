@@ -1,4 +1,4 @@
-import { IDb, IUser } from "../utils/models";
+import { IDb, IUser } from '../utils/models';
 
 const db: IDb = {
   users: []

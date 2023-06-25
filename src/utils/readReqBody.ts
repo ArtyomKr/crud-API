@@ -1,4 +1,4 @@
-import { IncomingMessage } from "http";
+import { IncomingMessage } from 'http';
 
 export default async function readReqBody(req: IncomingMessage) {
   const buffers = [];

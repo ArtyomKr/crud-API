@@ -1,7 +1,7 @@
-import { IncomingMessage, ServerResponse } from "http";
-import createUser from "../opr/createUser.js";
-import readReqBody from "../utils/readReqBody.js";
-import handleError from "./errorHandler.js";
+import { IncomingMessage, ServerResponse } from 'http';
+import createUser from '../opr/createUser.js';
+import readReqBody from '../utils/readReqBody.js';
+import handleError from './errorHandler.js';
 
 export default async function createUserAPI(
   req: IncomingMessage,

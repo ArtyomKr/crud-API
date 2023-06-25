@@ -1,5 +1,5 @@
-import { get, IncomingMessage, request } from "http";
-import "dotenv/config";
+import { get, IncomingMessage, request } from 'http';
+import 'dotenv/config';
 
 const testData = {
   username: 'testName',

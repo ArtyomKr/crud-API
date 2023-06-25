@@ -1,4 +1,4 @@
-import { IUser } from "./models.js";
+import { IUser } from './models.js';
 
 export default function isUserObj(obj: any): obj is Omit<IUser, 'id'> {
   if ('username' in obj && 'age' in obj && 'hobbies' in obj) {

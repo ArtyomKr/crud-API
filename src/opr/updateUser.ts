@@ -1,8 +1,8 @@
-import { getUsersDB, setUsersDB } from "../db/usersDB.js";
-import { IUser } from "../utils/models.js";
-import checkUUID from "../utils/checkUUID.js";
-import getUserById from "../utils/getUserById.js";
-import isUserObj from "../utils/userTypeGuard.js";
+import { getUsersDB, setUsersDB } from '../db/usersDB.js';
+import { IUser } from '../utils/models.js';
+import checkUUID from '../utils/checkUUID.js';
+import getUserById from '../utils/getUserById.js';
+import isUserObj from '../utils/userTypeGuard.js';
 
 export default function updateUser(id: string, updatedData: Omit<IUser, 'id'>) {
   if (!checkUUID(id)) return { code: 400, body: 'Invalid id' };

@@ -1,6 +1,6 @@
-import { ServerResponse } from "http";
-import getUser from "../opr/getUser.js";
-import handleError from "./errorHandler.js";
+import { ServerResponse } from 'http';
+import getUser from '../opr/getUser.js';
+import handleError from './errorHandler.js';
 
 export default function getUserByIdAPI(res: ServerResponse, id: string) {
   try {

@@ -1,4 +1,4 @@
-import { ServerResponse } from "http";
+import { ServerResponse } from 'http';
 
 export default function handleError(res: ServerResponse, err: unknown) {
   res.setHeader('Content-Type', 'text/html');

@@ -1,5 +1,5 @@
-import checkUUID from "../utils/checkUUID.js";
-import getUserById from "../utils/getUserById.js";
+import checkUUID from '../utils/checkUUID.js';
+import getUserById from '../utils/getUserById.js';
 
 export default function getUser(id: string) {
   if (!checkUUID(id)) return { code: 400, body: 'Invalid id' };

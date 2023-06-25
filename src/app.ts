@@ -1,11 +1,11 @@
-import { createServer, IncomingMessage, ServerResponse } from "http";
-import "dotenv/config";
-import getUsersAPI from "./endpoints/getUsersAPI.js";
-import getUserByIdAPI from "./endpoints/getUserByIdAPI.js";
-import createUserAPI from "./endpoints/createUserAPI.js";
-import putUserAPI from "./endpoints/putUserAPI.js";
-import deleteUserAPI from "./endpoints/deleteUserAPI.js";
-import unknownPath from "./endpoints/404.js";
+import { createServer, IncomingMessage, ServerResponse } from 'http';
+import 'dotenv/config';
+import getUsersAPI from './endpoints/getUsersAPI.js';
+import getUserByIdAPI from './endpoints/getUserByIdAPI.js';
+import createUserAPI from './endpoints/createUserAPI.js';
+import putUserAPI from './endpoints/putUserAPI.js';
+import deleteUserAPI from './endpoints/deleteUserAPI.js';
+import unknownPath from './endpoints/404.js';
 
 const port = process.env.PORT;
 

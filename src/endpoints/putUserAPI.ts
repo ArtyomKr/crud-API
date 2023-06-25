@@ -1,7 +1,7 @@
-import { IncomingMessage, ServerResponse } from "http";
-import updateUser from "../opr/updateUser.js";
-import readReqBody from "../utils/readReqBody.js";
-import handleError from "./errorHandler.js";
+import { IncomingMessage, ServerResponse } from 'http';
+import updateUser from '../opr/updateUser.js';
+import readReqBody from '../utils/readReqBody.js';
+import handleError from './errorHandler.js';
 
 export default async function putUserAPI(
   req: IncomingMessage,

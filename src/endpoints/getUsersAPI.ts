@@ -1,6 +1,6 @@
-import { getUsersDB } from "../db/usersDB.js";
-import { ServerResponse } from "http";
-import handleError from "./errorHandler.js";
+import { getUsersDB } from '../db/usersDB.js';
+import { ServerResponse } from 'http';
+import handleError from './errorHandler.js';
 
 export default function getUsersAPI(res: ServerResponse) {
   try {

@@ -1,6 +1,6 @@
-import { getUsersDB, setUsersDB } from "../db/usersDB.js";
-import checkUUID from "../utils/checkUUID.js";
-import getUserById from "../utils/getUserById.js";
+import { getUsersDB, setUsersDB } from '../db/usersDB.js';
+import checkUUID from '../utils/checkUUID.js';
+import getUserById from '../utils/getUserById.js';
 
 export default function deleteUser(id: string) {
   if (!checkUUID(id)) return { code: 400, body: 'Invalid id' };

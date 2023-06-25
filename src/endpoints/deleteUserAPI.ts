@@ -1,6 +1,6 @@
-import { ServerResponse } from "http";
-import deleteUser from "../opr/deleteUser.js";
-import handleError from "./errorHandler.js";
+import { ServerResponse } from 'http';
+import deleteUser from '../opr/deleteUser.js';
+import handleError from './errorHandler.js';
 
 export default function deleteUserAPI(res: ServerResponse, id: string) {
   try {
