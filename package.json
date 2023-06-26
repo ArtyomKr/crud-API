@@ -14,6 +14,7 @@
     "test": "start /b ts-node src/app.ts & jest",
     "start:dev": "nodemon src/app.ts",
     "start:prod": "webpack && node dist/bundle.cjs",
+    "start:multi": "nodemon src/app-multi.ts",
     "lint": "eslint --ext .js,.ts src",
     "fix": "eslint --ext .js,.ts src --fix"
   },
