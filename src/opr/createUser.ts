@@ -9,5 +9,5 @@ export default function createUser(user: Omit<IUser, 'id'>) {
   const users = getUsersDB();
   users.push(newUser);
   setUsersDB(users);
-  return { code: 200, body: newUser };
+  return { code: 201, body: newUser };
 }
