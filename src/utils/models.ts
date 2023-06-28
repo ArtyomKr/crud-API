@@ -9,4 +9,9 @@ interface IDb {
   users: IUser[];
 }
 
-export type { IUser, IDb };
+interface IClusterMessage {
+  action: string;
+  payload?: IUser[];
+}
+
+export type { IUser, IDb, IClusterMessage };
