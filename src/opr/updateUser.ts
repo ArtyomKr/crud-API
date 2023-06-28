@@ -4,13 +4,16 @@ import checkUUID from '../utils/checkUUID.js';
 import getUserById from '../utils/getUserById.js';
 import isUserObj from '../utils/userTypeGuard.js';
 
-export default function updateUser(id: string, updatedData: Omit<IUser, 'id'>) {
+export default async function updateUser(
+  id: string,
+  updatedData: Omit<IUser, 'id'>
+) {
   if (!checkUUID(id)) return { code: 400, body: 'Invalid id' };
   if (!getUserById(id)) return { code: 404, body: 'User not found' };
   if (!isUserObj(updatedData))
     return { code: 400, body: 'Invalid request body' };
   const updatedUser = { id, ...updatedData };
-  const users = getUsersDB().map((user) =>
+  const users = (await getUsersDB()).map((user) =>
     user.id === id ? updatedUser : user
   );
   setUsersDB(users);

@@ -10,7 +10,7 @@ export default async function putUserAPI(
 ) {
   try {
     const data = await readReqBody(req);
-    const { code, body } = updateUser(id, data);
+    const { code, body } = await updateUser(id, data);
 
     res.statusCode = code;
     res.write(JSON.stringify(body));

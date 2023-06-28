@@ -2,9 +2,9 @@ import { ServerResponse } from 'http';
 import deleteUser from '../opr/deleteUser.js';
 import handleError from './errorHandler.js';
 
-export default function deleteUserAPI(res: ServerResponse, id: string) {
+export default async function deleteUserAPI(res: ServerResponse, id: string) {
   try {
-    const { code, body } = deleteUser(id);
+    const { code, body } = await deleteUser(id);
     res.statusCode = code;
     res.write(JSON.stringify(body));
   } catch (err) {

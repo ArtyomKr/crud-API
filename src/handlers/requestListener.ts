@@ -16,14 +16,14 @@ const requestListener = async (req: IncomingMessage, res: ServerResponse) => {
     reqURL.length === 2 &&
     req.method === 'GET'
   ) {
-    getUsersAPI(res);
+    await getUsersAPI(res);
   } else if (
     reqURL[0] === 'api' &&
     reqURL[1] === 'users' &&
     reqURL.length === 3 &&
     req.method === 'GET'
   ) {
-    getUserByIdAPI(res, reqURL[2]);
+    await getUserByIdAPI(res, reqURL[2]);
   } else if (
     reqURL[0] === 'api' &&
     reqURL[1] === 'users' &&

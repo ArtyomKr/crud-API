@@ -1,5 +1,5 @@
 import { getUsersDB } from '../db/usersDB.js';
 
-export default function getUserById(id: string) {
-  return getUsersDB().find((user) => user.id === id);
+export default async function getUserById(id: string) {
+  return (await getUsersDB()).find((user) => user.id === id);
 }

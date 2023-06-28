@@ -9,7 +9,7 @@ export default async function createUserAPI(
 ) {
   try {
     const data = await readReqBody(req);
-    const { code, body } = createUser(data);
+    const { code, body } = await createUser(data);
 
     res.statusCode = code;
     res.write(JSON.stringify(body));
