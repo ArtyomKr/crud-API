@@ -1,25 +1,29 @@
 import { IncomingMessage, ServerResponse, request } from 'http';
 import handleError from '../endpoints/errorHandler.js';
-import readReqBody from '../utils/readReqBody.js';
 
 const createLoadBalancer = function (serverList: string[]) {
+  let index = 0;
   return async (req: IncomingMessage, res: ServerResponse) => {
-    const { method, url, headers} = req;
-    //const data = await readReqBody(req);
-    const reqURL = req.url?.match(/(?<=\/)[^\/]+/g) || [];
-    res.setHeader("Content-Type", "application/json");
+    const { method, url, headers } = req;
 
-    try {
-      const workerReq = request(`${serverList[0]}${url}`, { method, headers});
-      workerReq.on("response", (workerRes) => {
-        console.log(workerRes);
-        res.write(workerRes);
-      });
-    } catch (err) {
+    const target = serverList[index];
+    index = (index + 1) % serverList.length;
+
+    const workerReq = request(
+      target + url,
+      { method, headers },
+      (workerRes) => {
+        res.writeHead(workerRes.statusCode ?? 200, workerRes.headers);
+        workerRes.pipe(res);
+      }
+    );
+
+    workerReq.on('error', (err) => {
       handleError(res, err);
-    }
+    });
 
-    res.end();
+    req.pipe(workerReq);
+    console.log('\x1b[36m%s\x1b[0m', 'Sending request to: ' + target);
   };
 };
 
