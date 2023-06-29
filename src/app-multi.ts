@@ -36,6 +36,10 @@ if (cluster.isPrimary) {
       `Load balancer running at ${origin}:${port}/`
     );
   });
+
+  process.on('SIGINT', () => {
+    loadBalancer.close();
+  });
 } else {
   const server = createServer(requestListener);
 
@@ -47,5 +51,9 @@ if (cluster.isPrimary) {
     if (message.action === 'syncDB' && message.payload) {
       setUsersDB(message.payload);
     }
+  });
+
+  process.on('SIGINT', () => {
+    server.close();
   });
 }
