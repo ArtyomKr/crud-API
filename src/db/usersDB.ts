@@ -6,14 +6,14 @@ const db: IDb = {
 };
 
 function setUsersDB(arr: IUser[]) {
-  if (cluster.isWorker && process.send) {
-    process.send({ action: 'updateDB', payload: arr });
+  if (cluster.isWorker) {
+    process.send?.({ action: 'updateDB', payload: arr });
   } else db.users = arr;
   return db.users;
 }
 
 function getUsersDB() {
-  if (cluster.isWorker && process.send) {
+  if (cluster.isWorker) {
     return new Promise<IUser[]>((res) => {
       process.send?.({ action: 'sendDB' });
       process.on('message', (message: IClusterMessage) => {

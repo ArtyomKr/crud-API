@@ -47,12 +47,6 @@ if (cluster.isPrimary) {
     console.log(`Worker running at ${origin}:${port}/`);
   });
 
-  process.on('message', (message: IClusterMessage) => {
-    if (message.action === 'syncDB' && message.payload) {
-      setUsersDB(message.payload);
-    }
-  });
-
   process.on('SIGINT', () => {
     server.close();
   });
