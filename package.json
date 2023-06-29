@@ -11,7 +11,7 @@
   "type": "module",
   "main": "src/app.ts",
   "scripts": {
-    "test": "start /b ts-node src/app.ts & jest",
+    "test": "jest",
     "start:dev": "nodemon src/app.ts",
     "start:prod": "webpack && node dist/bundle.cjs",
     "start:multi": "nodemon src/app-multi.ts",
